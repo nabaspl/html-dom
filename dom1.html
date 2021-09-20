@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Name: <input type="text" id="text-box" value="test" class="text-box" name="text-box">
+<p id="demo" class="demo">p one</p>
+<p class="demo" id="demoTwo"> p two</p>
+<p>Click the button to change the value of the text field.</p>
+
+<button onclick="myFunctionId()">Try it by id</button>
+<button onclick="myFunctionClass()">Try it by class</button>
+<button onclick="myFunctionTag()">Try it by tag</button>
+
+
+<p>Click the button to make a a-tag element with text.</p>
+<button onclick="createElem()">Create element</button>
+
+<script>
+function myFunctionId() {
+  document.getElementById("text-box").value = "value changed by id";
+  document.getElementById("demo").innerHTML = "inner text changed by id";
+  document.getElementById("demo").style.background = "rgb(255,0,0)";
+}
+
+function myFunctionClass() {
+  document.getElementsByClassName("text-box")[0].value = "value changed by class";
+  document.getElementsByClassName("demo")[0].innerHTML = "inner text changed by class";
+  document.getElementById("demo").style.background = "rgb(137 33 171)";
+}
+
+function myFunctionTag() {
+  document.getElementsByTagName("input")[0].value = "value changed by tag";
+  document.getElementsByTagName("p")[1].innerHTML = "inner text  changed by tag using index";
+  document.getElementById("demoTwo").style.background = "rgb(189 166 101)";
+
+}
+
+
+function createElem() {
+  var aTag = document.createElement("a");
+  aTag.innerText = "go to google";
+  aTag.href="https://www.google.com/";
+  aTag.target="_blank";
+
+  document.body.appendChild(aTag);
+}
+
+
+</script>
+
+</body>
+</html>
